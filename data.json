@@ -1,0 +1,50 @@
+[
+  {
+    "lnLengths": [
+      4,
+      5,
+      2,
+      4
+    ],
+    "current_section": "v",
+    "lyrics": "lyrics/HeyJude.txt",
+    "title": "Hey Jude",
+    "displaying": "The Beatles 1968 *\n \nCapo III\n \n[Verse 1/4]\n\n D A A7 D (4 bars)\nHey Jude, don\u2019t make it bad, take a sad song and make it better (v)\n G D A A7 D (4 bars)\nRemember to let her into your heart, then you can start to make it better (v)\n\n[Verse 2/4]\n\n D A A7 D (4 bars)\nHey Jude, don\u2019t be afraid, you were made to go out and get her (v)\n G D A A7 D (4 bars)\nThe minute you let her under your skin, then you begin to make it better (v)\n \n[Chorus 1/2]\n \nD7 G Bm Em G A7 D (5 bars)\n And anytime you feel the pain, hey Jude, refrain, don\u2019t carry the world upon your shoulders (c)\nD7 G Bm Em G A7 D (5 bars)\n For well you know that it's a fool who plays it cool by making his world a little colder (c)\n \n[Interlude 1/2]\n \nD D7 A7 (2 bars)\nDa da da da da da da da (i)\n \n[Verse 3/4]\n \n D A A7 D (4 bars)\nHey Jude, don\u2019t let me down, you have found her, now go and get her\n G D A A7 D (4 bars)\nRemember to let her into your heart, then you can start to make it better\n \n[Chorus 2/2]\n \nD7 G Bm Em G A7 D (5 bars)\n So let it out and let it in, hey Jude, begin, you're waiting for someone to perform with\nD7 G Bm Em G A7 D (5 bars)\n And don\u2019t you know that it's just you, hey Jude, you'll do, the movement you need is on your shoulders\n \n[Interlude 2/2]\n \nD D7 A7 (2 bars)\nDa da da da da da da da\n \n[Verse 4/4]\n \n D A A7 D (4 bars)\nHey Jude, don\u2019t make it bad, take a sad song and make it better\n G D A A7 D (4 bars)\nRemember to let her under your skin, then you begin to make it better\n \n[Outro 1/1]\n \nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude\nD C G D (4 bars)\nNa na na na na na na na na na na, hey Jude . . . . .",
+    "sections": [
+      "v",
+      "c",
+      "i",
+      "o"
+    ]
+  },
+  {
+    "lnLengths": [
+      "4",
+      "5",
+      "5"
+    ],
+    "current_section": "v",
+    "lyrics": "lyrics/hey_jude.txt",
+    "title": "Hey Jude",
+    "displaying": "\n\nChorus 1/1\n\nklsjdbv (5 bars)\nklsjdac (c)\n\nklsjdbv (5 bars)\nsdklbcj (c)\n\n",
+    "sections": [
+      "v",
+      "v",
+      "c"
+    ]
+  },
+  {
+    "lnLengths": [
+      "4",
+      "2"
+    ],
+    "current_section": "v",
+    "lyrics": "lyrics/new_song_3.txt",
+    "title": "New Song 3",
+    "displaying": "\n\nChorus 1/1\n\nIV | I (2 bars)\nThis is thee chorus (c)\n\nIV | I (2 bars)\nThis is the second line of the chorus (c)\n\n",
+    "sections": [
+      "v",
+      "c"
+    ]
+  }
+]
