@@ -56,10 +56,12 @@ for key in keys:
 modifiedTitle = (title.replace(" ", "_")).lower()
 filePath = "lyrics/"+modifiedTitle+".txt"
 
+tempo = input("What is the tempo?")
 newSong = {
     "lnLengths": lnLengths,
     "current_section": structure[0], 
     "lyrics": filePath, 
+    "tempo" : tempo,
     "title": title, 
     "displaying": "",
     "sections": structure,

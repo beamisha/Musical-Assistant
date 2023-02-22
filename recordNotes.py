@@ -17,9 +17,6 @@ with open('midiData/metaNotes.json', 'r') as file:
 index = len(notes)
 metaNotes.append(song)
 
-# Load audio file
-wave_obj = sa.WaveObject.from_wave_file('audio/9_theo_5.wav')
-
 # Initialize the pygame.midi module
 pygame.midi.init()
 
@@ -36,10 +33,12 @@ device_info = pygame.midi.get_device_info(device_id)
 device_name = device_info[1].decode("utf-8")
 print("Using MIDI input device:", device_name)
 
+process1 = subprocess.Popen(["SwitchAudioSource", "-s", "BlackHole 2ch"])
+
 sequence = []
 stopped = False
 oldTime = 0
-threshold = 50
+threshold = 400
 bpm = 120
 millisPerBeat = int(60000/bpm)
 print("BPM:",bpm)
@@ -48,27 +47,27 @@ print("Milliseconds per beat:",millisPerBeat)
 start_time = time.time()
 # Start an infinite loop to receive MIDI messages
 while True:
-    elapsed_time = time.time() - start_time
-    print(int(elapsed_time*1000-1))
-    if (int(elapsed_time*1000-1) % millisPerBeat == 0):
-        print("Ding")
     if midi_in.poll():
         # Receive a list of MIDI events (timestamp, status, data1, data2)
         midi_events = midi_in.read(10)
         # Print the MIDI events to the console
         for midi_event in midi_events:
-            if midi_event[0][1] == 60 :
-                print(midi_event)
-                print("Stopping!")
-                stopped = True
-                break
+            
             if midi_event[0][0] in [147] :
                 newTime = midi_event[1]
                 if (newTime - oldTime) > threshold :
+                    if midi_event[0][1] == 52 :
+                        print(midi_event)
+                        print("Starting!")
                     sequence.append(midi_event)
                     # Run the script with command-line arguments
                     print("Recorded event!")
                     print(midi_event)
+                if midi_event[0][1] == 60 :
+                    print(midi_event)
+                    print("Stopping!")
+                    stopped = True
+                    break
                 oldTime = newTime
             print(midi_event)
         if stopped:

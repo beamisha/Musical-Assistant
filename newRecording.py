@@ -1,30 +1,55 @@
 import sys
+import json
 import subprocess
-import time
 import signal
+import time
 
 # Get the first command-line argument
 song = sys.argv[1]
 
-process1 = subprocess.Popen(["SwitchAudioSource", "-s", "BlackHole 2ch"])
+with open('midiData/notes.json', 'r') as file:
+    notes = json.load(file)
 
-process2 = subprocess.Popen(["SwitchAudioSource", "-t", "input", "-s" "BlackHole 2ch"])
+with open('midiData/metaNotes.json', 'r') as file:
+    metaNotes = json.load(file)
 
-# Start subprocess 1
-process3 = subprocess.Popen(['python', 'midiPlayer.py', song])
+index = 10000
+for i in range(0,len(metaNotes)) :
+    if metaNotes[i] == song:
+        index = i
 
-# Start subprocess 2
-process4 = subprocess.Popen(['python', 'recordAudio.py', song])
+if index == 10000:
+    print("Song not found")
+else:
 
-duration = 11
+    sequence = notes[index]
+    start = sequence[0][1]
+    stop = sequence[-1][1]
 
-# wait for the specified duration
-time.sleep(duration)
+    print("Start:",start)
+    print("Stop:",stop)
 
-process1.send_signal(signal.SIGINT)
+    process1 = subprocess.Popen(["SwitchAudioSource", "-s", "BlackHole 2ch"])
 
-process2.send_signal(signal.SIGINT)
+    process2 = subprocess.Popen(["SwitchAudioSource", "-t", "input", "-s" "BlackHole 2ch"])
 
-process3.send_signal(signal.SIGINT)
+    # Start subprocess 1
+    process3 = subprocess.Popen(['python', 'midiPlayer.py', song])
 
-process4.send_signal(signal.SIGINT)
+    # wait for the specified duration
+    time.sleep(start/1000)
+
+    duration = int((stop/1000)-(start/1000))
+    # Start subprocess 2
+    process4 = subprocess.Popen(['python', 'recordAudio.py', song, str(duration)])
+
+    # wait for the specified duration
+    time.sleep(duration+1)
+
+    process1.send_signal(signal.SIGINT)
+
+    process2.send_signal(signal.SIGINT)
+
+    process3.send_signal(signal.SIGINT)
+
+    process4.send_signal(signal.SIGINT)
